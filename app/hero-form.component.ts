@@ -15,5 +15,13 @@ export class HeroFormComponent{
     submitted = false;
     onSubmit(){this.submitted=true;}
     get diagnostic(){return JSON.stringify(this.model);}
+
+    active = true;
+
+    newHero(){
+        this.model = new Hero(42,'','');
+        this.active = false;
+        setTimeout(() =>this.active=true,0);
+    }
 }
 
